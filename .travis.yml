@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-- stable
+  - stable
 install: npm install
 services:
-- mongodb
+  - mongodb
 script: npm test
 after_success: npm run coverage
 deploy:
@@ -13,5 +13,5 @@ deploy:
   app: projects-database
   on:
     repo: myra-1/mongodb-mongoose-express-ci
-      run:
+  run:
     - "node seed/userProjects.js"
